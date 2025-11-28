@@ -3,17 +3,41 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Uma página sobre o João Henrique de Freitas Castlewood Silva Deltunes Miguel Faria António Leite</title>
-<style>:root{--bg:#ffffff; --ink:#000000; --muted:#4b5563;--brand:black; --container: 800px;} 
+<title>Quem é o João Henrique de Freitas Castlewood Silva Deltunes Miguel Faria António Leite</title>
+<style>:root{--bg:#ffffff; --ink:#000000; --muted:#4b5563;--brand:black; --container: 800px; --radius: 10px} 
 body{background:var(--bg); color:var(--ink)}
-p{color:var(--muted)}
 .container{width:var(--container);margin:0 auto}
+
+/* HEADER */
 header{background:var(--brand); color:rgb(255, 255, 255); padding:14px}
 .head{display:flex; justify-content:space-between; align-items:center}
 .logo{font-weight:bold; font-size:20px; font-family:arial}
-#sobre .wrap{display:grid;grid-template-columns:520px 240px;gap:16px;align-items:center}
 nav a{color:aquamarine;text-decoration:none;margin-left:12px}
 nav a:hover{text-decoration:underline;color:rgb(0, 158, 186)}
+
+/* SECTIONS */
+section{padding:12px}
+p{color:var(--muted)}
+
+/* SOBRE */
+#sobre .wrap{display:grid;grid-template-columns:600px 440px;gap:16px;align-items:center}
+#sobre img{width: 225px; height: 225px; object-fit: cover; border-radius: var(--radius)}
+
+/* GALERIA */
+.grid{display:grid; grid-template-columns:repeat(3, 240px);gap:10px}
+.grid img{width:240px;height:160px; object-fit:cover;border-radius:6px; font:inherit}
+
+/* FORM */
+form{width:400px;background:var(--card);border:1px solid #000000;border-radius:var(--radius);padding:15px}
+input,textarea{width:100%;margin:10px 0 10px;border:1px solid #cbd5e1;border-radius:6px;font:inherit}
+button{width:100%;padding:10px;border:0;border-radius:6px;background:var(--brand);color:#fff;font-weight:700;cursor:pointer}
+button:hover{filter:brightness(.9)}
+
+/* FOOTER */
+footer{border-top:1px solid #000000;margin-top:20px;background:#ffffffb7}
+.foot{display:flex;justify-content:space-between;align-items:center;padding:12px;color:var(--muted);font-size:14px}
+.foot a{color:var(--muted);text-decoration:none}
+
 </style>
 </head>
 <body>
@@ -22,8 +46,8 @@ nav a:hover{text-decoration:underline;color:rgb(0, 158, 186)}
 <div class = "logo"> João Henrique</div>
 <nav>
 <a href = "#sobre"> Sobre</a>
-<a href = "#galeria"> Galeria</a>
 <a href = "#hobbies"> Hobbies</a>
+<a href = "#galeria"> Galeria</a>
 <a href = "#contactos"> Contactos</a>
 </nav>
 </div>
@@ -36,7 +60,52 @@ nav a:hover{text-decoration:underline;color:rgb(0, 158, 186)}
 <p>Ao longo do tempo, procuro adicionar novas ideias e experiencias nesta página!</p>
 </div>
 <div>
-<img src = "" alt = "Foto de Perfil">
+<img src = "C:\Users\João Leite\Downloads\far.jpg" alt = "Foto de Perfil">
 </div>
+</section>
+<section id = "hobbies">
+<div class = "container">
+<h1>Hobbies</h1>
+<ul>
+<li>Jogos (Stardew Valley, Super Mario Odyssey, Minecraft,...)</li>
+<li>Ouvir música (Clássica e Jazz)</li>
+<li>Programação (Python)</li>
+<li>Ler</li>
+<li>Falar com os meus amigos</li>
+<li><del>Praticar rituais satânicos e oferecer a minha familia como sacrificio</del></li>
+<li>Tocar piano</li>
+</ul>
+</div>
+</section>
+<section id = "galeria">
+<div class = "container">
+<h1>Galeria</h1>
+<div class = "grid">
+<img src = "C:\Users\João Leite\Desktop\João HTML\Aula 2\farfet.jpg" alt = "Farfetch'd">
+<img src = "C:\Users\João Leite\Desktop\João HTML\Aula 2\wiked.jpg" alt = "Wicked">
+<img src = "C:\Users\João Leite\Desktop\João HTML\Aula 2\catratas.jpg" alt = "cascatas">
+<img src = "C:\Users\João Leite\Desktop\João HTML\Aula 2\melda.jpg" alt = "The Legend of Zelda: Tears of the Kingdom">
+<img src = "C:\Users\João Leite\Desktop\João HTML\Aula 2\moondew valley.jpg" alt = "Stardew Valley">
+<img src = "C:\Users\João Leite\Desktop\João HTML\Aula 2\plains biome.jpg" alt = "Planicies Bonitas">
+</div>
+</div>
+</section>
+<section id="contactos">
+<div class="container">
+<h2>Contacto</h2>
+<form>
+<input type="text" placeholder="Nome" required>
+<input type="email" placeholder="Email" required>
+<textarea rows="4" placeholder="Mensagem" required></textarea>
+<button type="submit">Enviar</button>
+</form>
+</div>
+</section>
+  <footer>
+    <div class="container foot">
+      <p>© 2025 — Meu Site Pessoal</p>
+      <div><a href="#">Termos</a> · <a href="#">Privacidade</a> · <a href="#">ur mom</a></div>
+    </div>
+  </footer>
 </body>
 </html>
