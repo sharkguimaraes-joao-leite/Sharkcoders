@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang = "pt">
+  <style>
+    body{
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+      background-color: #f0f8ff;
+    }
+    h1{
+      color: #72f1ad;
+    }
+    button{
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      background-color: #00b4d8;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover{
+      background-color: #0077b6;
+    }
+  </style>
+    <head>
+        <meta charset = "UTF-8">
+        <title>Página de Javascript</title>
+    </head>
+    <body>
+        <script>
+            var resposta = prompt("Qual e a resposta para a vida, o universo e tudo o que existe?");
+            if (resposta == 42) {
+                alert("Correto!");
+            }
+            else {alert("Incorreto");}
+            function mudarTexto() {let elemento = document.getElementById("titulo"); elemento.innerHTML = "Olha tu a seres obediente!"}
+        </script>
+        <h1 id = "titulo">Olá {INSERIR NOME AQUI}!</h1>
+        <button onclick = "mudarTexto()">Clique Aqui</button>
+    </body>
+</html>
