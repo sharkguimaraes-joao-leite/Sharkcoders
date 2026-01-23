@@ -1,0 +1,61 @@
+import pygame
+import random
+import time
+
+pygame.init()
+
+screen = pygame.display.set_mode((1200, 600))
+clock = pygame.time.Clock()
+score = 0
+pixel_font = pygame.font.Font("Pixeltype.ttf", 50)
+running = True
+surprise = "last_surprise.mp3"
+sky_surf = pygame.image.load("sky.png")
+ground_surf = pygame.image.load("ground.png")
+pipe_surf = pygame.image.load("pipe.png").convert_alpha()
+pipe_x_pos = 1200
+pipe_rect = pipe_surf.get_rect(x = pipe_x_pos, y = 256)
+birb_surf = pygame.image.load("birb.png").convert_alpha()
+birb_x_pos = 1200
+birb_rect = birb_surf.get_rect(x = birb_x_pos, y = 90)
+mushroom_surf = pygame.image.load("mushroom.png").convert_alpha()
+mushroom_rect = mushroom_surf.get_rect(x = 120, y = 270)
+spawn = random.randint(1, 2)
+
+
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+    text_surf = pixel_font.render(f"Score: {round(score)}", False, "black")
+
+    pygame.display.flip()
+    screen.blit(sky_surf, (0, 0))
+    screen.blit(ground_surf, (0, 450))
+    screen.blit(text_surf, (10, 10))
+    screen.blit(pipe_surf, (pipe_x_pos, 256))
+    screen.blit(birb_surf, (birb_x_pos, 90))
+    screen.blit(mushroom_surf, mushroom_rect)
+
+    if mushroom_rect.colliderect(pipe_rect):
+        pass
+
+    if spawn == 1:
+        pipe_x_pos += -8
+        if pipe_x_pos <= -200:
+                pipe_x_pos = 1200
+                spawn = random.randint(1, 2)
+
+    elif spawn == 2:
+        birb_x_pos += -8
+        if birb_x_pos <= -200:
+                birb_x_pos = 1200
+                spawn = random.randint(1, 2)
+
+    score += 0.1
+
+
+    pygame.display.update()
+    clock.tick(60)
+
+pygame.quit()
